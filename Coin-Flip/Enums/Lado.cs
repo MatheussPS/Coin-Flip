@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Coin_Flip.Enums
 {
-    internal class Lado
+    public enum Lados
     {
+        Cara,
+        Coroa
     }
+
 }
