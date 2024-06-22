@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinFlip_MVVM.Views.CoinView"
+             Title="CoinView">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+        <Label
+            Text = "{Binding Escolha_sistema}"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+        />
+        
+        <Image
+            Source ="{Binding Imagem}"
+            HeightRequest="185"
+            Aspect="AspectFit"
+        />
+
+        <Label
+            Text = "{Binding Resultado}"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+        />
+
+        <Picker 
+            Title = "Selecione"
+            SelectedItem = "{Binding Escolha}" >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Cara</x:String>
+                    <x:String>Coroa</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button
+            Text="Girar Moeda" 
+            Command ="{Binding JogarCommand}"
+            HorizontalOptions="Fill"/>
+    </VerticalStackLayout>
+</ContentPage>
